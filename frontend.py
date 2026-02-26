@@ -10,10 +10,10 @@ if "result" not in st.session_state:
     st.session_state.result = None
 
 if st.button("Analyze"):
-    response = requests.post(
-        "http://localhost:8000/analyze",
+         response = requests.post(
+        "https://codeanalyzer-fu5s.onrender.com/analyze",
         json={"code": code},
-        proxies={"http": None, "https": None}
+        timeout=60
     )
 
     if response.status_code == 200:
