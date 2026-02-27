@@ -10,7 +10,7 @@ if "result" not in st.session_state:
     st.session_state.result = None
 
 if st.button("Analyze"):
-         response = requests.post(
+    response = requests.post(
         "https://codeanalyzer-fu5s.onrender.com/analyze",
         json={"code": code},
         timeout=60
@@ -20,8 +20,6 @@ if st.button("Analyze"):
         st.session_state.result = response.json()
     else:
         st.error("Backend error. Check FastAPI terminal.")
-
-
 # Display result only if available
 if st.session_state.result:
     result = st.session_state.result
