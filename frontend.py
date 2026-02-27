@@ -13,7 +13,7 @@ if st.button("Analyze"):
     response = requests.post(
         "https://codeanalyzer-fu5s.onrender.com/analyze",
         json={"code": code},
-        timeout=60
+        timeout=180
     )
 
     if response.status_code == 200:
